@@ -1,16 +1,17 @@
-// styled components
-import { Container } from './elements'
-
-// components
+// common components
 import { Navigation, Hero, Footer } from 'components'
 
-export function Home () {
+// components
+import Project from './project'
+
+export function ProjectSinglePage () {
+  const id = 1
   return (
-    <Container>
+    <>
       <Navigation />
       <Hero />
-      <
+      <Project id={id} />
       <Footer />
-    </Container>
+    </>
   )
 }
