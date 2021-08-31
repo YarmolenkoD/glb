@@ -1,1 +1,5 @@
 export * from './navigation/navigation'
+export * from './hero/hero'
+export * from './features/features'
+export * from './footer/footer'
+export * from './contact-us/contact-us'

@@ -1,13 +1,17 @@
-// elements
-import { Container } from 'theme/elements'
+// styled components
+import { Container } from './elements'
 
 // components
-import { Navigation } from 'components'
+import { Navigation, Hero, Features, Footer, ContactUs } from 'components'
 
 export function Home () {
   return (
     <Container>
       <Navigation />
+      <Hero />
+      <Features />
+      <ContactUs />
+      <Footer />
     </Container>
   )
 }
