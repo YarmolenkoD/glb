@@ -1,3 +1,6 @@
+import { useCallback } from 'react'
+import { useHistory } from 'react-router-dom'
+
 // styled components
 import { Container } from 'theme/elements'
 import * as Elements from './elements'
@@ -7,28 +10,51 @@ import { logo } from 'assets/images'
 
 const NAVIGATION_ITEMS = [
   {
-    path: '/home',
+    path: '/',
     title: 'Home',
-  },
-  {
-    path: '/about-us',
-    title: 'About us',
   },
   {
     path: '/projects',
     title: 'Our projects',
-  },
-  {
-    path: '/contact-us',
-    title: 'Contact us',
+    isActive: (match, location) => location.pathname.match(/projects/)
   },
 ]
 
-export function Navigation() {
+interface IExtraProps {
+  isActive?: (match: any, location: any) => boolean
+}
 
-  const renderItem = ({ path, title }) => {
+interface IRenderItemProps {
+  isActive?: (match: any, location: any) => boolean
+  title: string
+  path: string
+}
+
+export function Navigation() {
+  const history = useHistory()
+
+  const onLogoClick = useCallback(() => {
+    if (history?.location?.pathname === '/') {
+      window.location.reload()
+    } else {
+      history.push('/')
+    }
+  }, [])
+
+  const renderItem = ({ path, title, isActive }: IRenderItemProps) => {
+    const extraProps: IExtraProps = {}
+
+    if (isActive) {
+      extraProps.isActive = isActive
+    }
+
     return <Elements.Item>
-      <Elements.Link to={path} activeClassName="active">
+      <Elements.Link
+        exact
+        to={path}
+        activeClassName="active"
+        {...extraProps}
+      >
         {title}
       </Elements.Link>
     </Elements.Item>
@@ -37,7 +63,7 @@ export function Navigation() {
   return <Elements.Wrapper>
     <Container>
       <Elements.InnerContainer>
-        <Elements.Logo src={logo}/>
+        <Elements.Logo onClick={onLogoClick} src={logo} />
         <Elements.Nav>
           {NAVIGATION_ITEMS.map(renderItem)}
         </Elements.Nav>

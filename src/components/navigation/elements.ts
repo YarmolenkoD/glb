@@ -31,7 +31,7 @@ export const Item = styled.li<any>`
   align-items: center;
 `
 
-export const Link = styled(NavLink)`
+export const Link = styled(NavLink)<any>`
   position: relative;
   padding: 10px 4px;
   text-decoration: none;
@@ -59,4 +59,5 @@ export const Link = styled(NavLink)`
 
 export const Logo = styled.img<any>`
   max-width: 500px;
+  cursor: pointer;
 `

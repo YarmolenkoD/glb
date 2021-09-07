@@ -2,33 +2,10 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div<any>`
   background: ${({ theme }) => theme.palette.grayLightest};
-  border-bottom: 1px solid rgba(231, 231, 231, 0);
-  box-shadow: 0 0 10px rgb(0 0 0 / 15%);
-  padding: 15px 0;
 `
 
 export const InnerContainer = styled.div<any>`
-  padding: 50px 0;
-`
-
-export const SectionTitle = styled.h2<any>`
-  position: relative;
-  text-transform: uppercase;
-  margin: 0 0 20px;
-  font-weight: 700;
-  font-size: 36px;
-  color: ${({ theme }) => theme.text};
-  text-align: center;
-  &:after {
-    position: absolute;
-    content: '';
-    background: ${({ theme }) => theme.gradient};
-    height: 4px;
-    width: 60px;
-    bottom: 0;
-    margin-left: -30px;
-    left: 50%;
-  }
+  padding: 70px 0;
 `
 
 export const FeaturesList = styled.ul<any>`

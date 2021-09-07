@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 
 // styled components
-import { Container } from 'theme/elements'
+import { Container, SectionTitle } from 'theme/elements'
 import * as Elements from './elements'
 
 // images
@@ -74,14 +74,14 @@ export function Features() {
         {list.map(renderListItem)}
       </Elements.FeatureItemList>
     </Elements.FeatureItem>
-  }, [])
+  }, [renderListItem])
 
   return <Elements.Wrapper>
     <Container>
       <Elements.InnerContainer>
-        <Elements.SectionTitle>
+        <SectionTitle>
           Features
-        </Elements.SectionTitle>
+        </SectionTitle>
         <Elements.FeaturesList>
           {SERVICES_ITEMS.map(renderItem)}
         </Elements.FeaturesList>

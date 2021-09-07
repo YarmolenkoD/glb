@@ -9,6 +9,9 @@ import { ReduxProvider } from 'redux-store'
 // router
 import { Router } from 'router'
 
+// styles
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 function App() {
   const theme = useTheme()

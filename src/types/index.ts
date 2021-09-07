@@ -13,6 +13,7 @@ export interface ITheme {
   separator: string,
   error: string,
   gradient: string,
+  opacityGradient: string,
 }
 
 export interface Action {
@@ -27,4 +28,13 @@ export type Theme = 'dark'|'light'
 
 export interface IThemeContext {
   theme: Theme,
+}
+
+export interface IProject {
+  id: number,
+  title: string,
+  country: string,
+  description: string,
+  category: string,
+  images: [string],
 }

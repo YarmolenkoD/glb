@@ -7,10 +7,16 @@ const SLIDER_IMAGES = [hero1, hero2, hero3]
 
 const NAVIGATION_HEIGHT = 78
 
+const FULL_SCREEN_HEIGHT = '100vh'
+const NOT_FULL_SCREEN_HEIGHT = '70vh'
+
+const getHeight = (fullScreen) => (
+  `calc(${fullScreen ? FULL_SCREEN_HEIGHT : NOT_FULL_SCREEN_HEIGHT} - ${NAVIGATION_HEIGHT}px)`
+)
+
 export const Wrapper = styled.header<any>`
   position: relative;
 `
-
 
 export const InnerContainer = styled.div<any>`
   position: relative;
@@ -18,7 +24,7 @@ export const InnerContainer = styled.div<any>`
   align-items: center;
   justify-content: space-between;
   max-width: 750px;
-  height: calc(100vh - ${NAVIGATION_HEIGHT}px);
+  height: ${({ fullScreen }) => getHeight(fullScreen)};
   margin: 0 auto;
   text-align: center;
 `
@@ -30,7 +36,7 @@ export const SliderContainer = styled.div<any>`
   bottom: 0;
   left: 0;
   & .slick-slider {
-    height: calc(100vh - ${NAVIGATION_HEIGHT}px);
+    height: ${({ fullScreen }) => getHeight(fullScreen)};
   }
   & .slick-dots {
     bottom: 0;
@@ -51,7 +57,7 @@ export const SliderContainer = styled.div<any>`
 
 export const SliderItem = styled.div<any>`
   width: 100%;
-  height: calc(100vh - ${NAVIGATION_HEIGHT}px);
+  height: ${({ fullScreen }) => getHeight(fullScreen)};
   background: linear-gradient(-45deg, rgb(0, 0, 0, 0.5), rgb(96, 141, 253, 0.5)), 
   url(${({ item }) => SLIDER_IMAGES[item - 1]}) no-repeat center/cover fixed;
 `

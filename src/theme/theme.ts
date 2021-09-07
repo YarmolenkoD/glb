@@ -61,6 +61,10 @@ const light: ITheme = {
    * Primary gradient.
    */
   gradient: `linear-gradient(to right, ${palette.lightBlue} 0%, ${palette.darkBlue} 100%)`,
+  /**
+   * Primary opacity gradient.
+   */
+  opacityGradient: `linear-gradient(to right, rgba(99, 114, 255, 0.8) 0%, rgba(92, 169, 251, 0.8) 100%)`,
 }
 
 const dark: ITheme = {
@@ -119,6 +123,10 @@ const dark: ITheme = {
    * Primary gradient.
    */
   gradient: `linear-gradient(to right, ${palette.lightBlue} 0%, ${palette.darkBlue} 100%)`,
+  /**
+   * Primary opacity gradient.
+   */
+  opacityGradient: `linear-gradient(to right, rgba(99, 114, 255, 0.8) 0%, rgba(92, 169, 251, 0.8) 100%)`,
 }
 
 export const theme = {
