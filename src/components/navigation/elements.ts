@@ -1,8 +1,5 @@
 import styled from 'styled-components'
-
-import {
-  NavLink
-} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export const Wrapper = styled.div<any>`
   background: ${({ theme }) => `${theme.palette.white}`};
@@ -10,7 +7,6 @@ export const Wrapper = styled.div<any>`
   box-shadow: 0 0 10px rgb(0 0 0 / 15%);
   padding: 15px 0;
 `
-
 
 export const InnerContainer = styled.div<any>`
   display: flex;
@@ -57,7 +53,13 @@ export const Link = styled(NavLink)<any>`
   }
 `
 
+export const LogoContainer = styled.div<any>`
+  display: flex;
+  align-items: center;
+`
+
 export const Logo = styled.img<any>`
   max-width: 500px;
+  margin-right: 20px;
   cursor: pointer;
 `

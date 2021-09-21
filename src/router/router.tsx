@@ -5,10 +5,10 @@ import {
 } from 'react-router-dom'
 
 // pages
-import { Home, SingleProject, Projects } from 'pages'
+import { Home, SingleProject, Projects, AboutUs } from 'pages'
 
 // components
-import { Footer, Navigation } from 'components'
+import { ContactUs, Footer, Navigation } from 'components'
 
 // styled components
 import { Screen } from 'theme/elements'
@@ -22,6 +22,9 @@ export function Router() {
           <Route exact path="/">
             <Home />
           </Route>
+          <Route exact path="/about-us">
+            <AboutUs />
+          </Route>
           <Route exact path="/projects">
             <Projects />
           </Route>
@@ -29,6 +32,7 @@ export function Router() {
             <SingleProject />
           </Route>
         </Switch>
+        <ContactUs />
         <Footer />
       </Screen>
     </BrowserRouter>

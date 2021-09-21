@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div<any>`
   background: ${({ theme }) => `${theme.palette.white}`};
+  overflow: hidden;
 `
 
 export const InnerContainer = styled.div<any>`

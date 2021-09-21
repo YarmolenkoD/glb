@@ -1,9 +1,13 @@
 import { useCallback } from 'react'
 import { useHistory } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 // styled components
 import { Container } from 'theme/elements'
 import * as Elements from './elements'
+
+// components
+import { SwitchLanguage } from 'components'
 
 // images
 import { logo } from 'assets/images'
@@ -14,9 +18,13 @@ const NAVIGATION_ITEMS = [
     title: 'Home',
   },
   {
+    path: '/about-us',
+    title: 'About us',
+  },
+  {
     path: '/projects',
     title: 'Our projects',
-    isActive: (match, location) => location.pathname.match(/projects/)
+    isActive: (match, location) => location.pathname.match(/projects/),
   },
 ]
 
@@ -31,6 +39,7 @@ interface IRenderItemProps {
 }
 
 export function Navigation() {
+  const { t } = useTranslation()
   const history = useHistory()
 
   const onLogoClick = useCallback(() => {
@@ -55,7 +64,7 @@ export function Navigation() {
         activeClassName="active"
         {...extraProps}
       >
-        {title}
+        {t(title)}
       </Elements.Link>
     </Elements.Item>
   }
@@ -63,7 +72,10 @@ export function Navigation() {
   return <Elements.Wrapper>
     <Container>
       <Elements.InnerContainer>
-        <Elements.Logo onClick={onLogoClick} src={logo} />
+        <Elements.LogoContainer>
+          <Elements.Logo onClick={onLogoClick} src={logo} alt="GlB construction" />
+          <SwitchLanguage />
+        </Elements.LogoContainer>
         <Elements.Nav>
           {NAVIGATION_ITEMS.map(renderItem)}
         </Elements.Nav>

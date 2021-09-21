@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 export const Wrapper = styled.div<any>`
   background: ${({ theme }) => `${theme.palette.white}`};
@@ -8,19 +9,25 @@ export const InnerContainer = styled.div<any>`
   padding: 70px 0;
 `
 
-export const ProjectsList = styled.ul<any>`
+export const ProjectsList = styled.div<any>`
   display: flex;
   flex-wrap: wrap;
-  padding: 0;
-  list-style-type: none;
+`
+
+export const ProjectItemAnimateContainer = styled(ScrollAnimation)<any>`
+  position: relative;
+  width: 33.33333333%;
+  padding: 20% 25px 0 25px;
 `
 
 export const ProjectItem = styled.div<any>`
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   overflow: hidden;
-  width: 33.33333333%;
-  padding: 20% 25px 0 25px;
-  background: url(${({ bg }) => bg}) no-repeat center/cover;
+  width: 100%;
+  height: 100%;
+  background: ${({ theme }) => theme.palette.grayLight} url(${({ bg }) => bg}) no-repeat center/cover;
   cursor: pointer;
   border: 1px solid ${({ theme }) => theme.palette.white};
  
@@ -61,4 +68,48 @@ export const ProjectTitle = styled.h4<any>`
   transition: all 0.3s;
   text-align: center;
   opacity: 0;
+`
+
+export const FiltersContainer = styled.ul<any>`
+  display: flex;
+  margin: 0 0 20px;
+  padding: 0;
+  list-style-type: none;
+`
+
+export const FilterItem = styled.li<any>`
+  position: relative;
+  display: flex;
+  padding: 5px 20px 5px 10px;
+  margin: 10px;
+  border: 1px solid ${({ theme }) => theme.line};
+  border-radius: 20px;
+  font-size: 18px;
+  color: ${({ theme }) => theme.textLight};
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background: ${({ theme }) => theme.palette.white};
+  
+  &:first-child {
+    margin-left: 0;
+  }
+  
+  &:last-child {
+    margin-right: 0;
+  }
+  
+  &.active {
+    color: ${({ theme }) => theme.textLighter};
+    background: ${({ theme }) => theme.primary};
+    border-color: ${({ theme }) => theme.primary};
+  }
+`
+
+export const FilterKey = styled.span<any>`
+  margin-right: 6px;
+`
+
+export const FilterValue = styled.span<any>`
+  
 `

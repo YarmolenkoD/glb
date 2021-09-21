@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import _ from 'lodash'
 
 // hooks
-import { useTranslation } from './use-translation'
+import { useTranslation, IFilterParams } from 'hooks'
 
 // images
 import images from 'assets/images/data/projects'
@@ -20,21 +21,38 @@ export interface IProjectsData {
   loading: boolean
 }
 
+interface IFilterProjectsParams {
+  country?: string|null
+}
+
+export type FilterProjectsParams = IFilterProjectsParams|null
+
 interface IParams {
   initialPage?: number
   count?: number
+  filters?: IFilterParams
 }
 
-const formatProjects = (projects) => (
-  projects.map((project) => ({
+const formatProjects = (projects, filters: IFilterParams = []) => {
+  const filter = filters.reduce((res, { key, value, active }) => {
+    if (active) {
+      return {
+        ...res,
+        [key]: value
+      }
+    }
+    return res
+  }, {})
+
+  return _.filter(projects, filter).map((project) => ({
     ...project,
     images: images[project.id] || []
   }))
-)
+}
 
-export const useProjects = ({ initialPage = 1, count = 10 }: IParams) => {
+export const useProjects = ({ initialPage = 1, count = 10, filters }: IParams) => {
   const translation = useTranslation()
-  const data = useMemo(() => formatProjects(jsonData[translation]), [translation])
+  const data = useMemo(() => formatProjects(jsonData[translation], filters), [translation])
 
   const [currentPage, setCurrentPage] = useState<number>(initialPage)
   const [projects, setProjects] = useState<IProject[]>([])

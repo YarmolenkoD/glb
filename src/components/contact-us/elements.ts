@@ -1,25 +1,16 @@
 import styled from 'styled-components'
 
-// common styled components
-import { Button } from 'theme/elements'
-
 export const Wrapper = styled.div<any>`
   background: ${({ theme }) => `${theme.gradient}`};
-  padding: 100px 0 60px;
+  padding: 50px 0;
   color: rgba(255, 255, 255, 0.75);
+  overflow: hidden;
 `
 
 export const InnerContainer = styled.div<any>`
   display: flex;
-`
-
-export const ContactUsWrapper = styled.div<any>`
-  max-width: 66.666666%;
-  padding-right: 15px;
-`
-
-export const TitleSection = styled.div<any>`
-  margin-bottom: 40px;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const Title = styled.div<any>`
@@ -42,16 +33,6 @@ export const Title = styled.div<any>`
 
 export const SubTitle = styled.p<any>`
   font-size: 16px;
-`
-
-export const FormWrapper = styled.form<any>`
-  display: flex;
-  flex-direction: column;
-`
-
-export const InputsWrapper = styled.div<any>`
-  display: flex;
-  margin-bottom: 20px;
 `
 
 export const InputContainer = styled.div<any>`
@@ -79,53 +60,89 @@ export const Input = styled.input<any>`
   outline: none;
 `
 
-export const TextAreaInput = styled.textarea<any>`
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  min-width: 100%; 
-  min-height: 140px;
-  padding: 12px;
-  font-size: 16px;
-  color: ${({ theme }) => `${theme.textLight}`};
-  background-color: ${({ theme }) => `${theme.background}`};
-  background-image: none;
-  border: 1px solid ${({ theme }) => `${theme.line}`};
-  border-radius: 0;
-  box-shadow: none;
-  transition: none;
-  outline: none;
-  resize: none;
-`
-
-export const SubmitButton = styled(Button)<any>`
-  max-width: 210px;
-  margin-top: 40px;
-  background: transparent;
-  border: 2px solid ${({ theme }) => `${theme.palette.white}`};
-  &:hover {
-    color: #1f386e;
-    background: ${({ theme }) => `${theme.palette.white}`};
-  }
-`
-
 export const ContactInfoWrapper = styled.div<any>`
-  max-width: 33.333333%;
-   padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-left: 30px;
+`
+
+export const ContactInfoList = styled.ul<any>`
+  display: flex;
+  margin: 0;
+  padding: 0;
 `
 
 export const ContactInfoTitle = styled.h3<any>`
-  margin: 0 0 40px;
+  margin: 0 0 20px;
   font-weight: 400;
-  color: ${({ theme }) => `${theme.palette.white}`};
+  color: ${({ theme }) => `${theme.textLighter}`};
 `
 
-export const ContactInfoItem = styled.div<any>`
+export const ContactInfoItem = styled.li<any>`
   display: flex;
   flex-direction: column;
   font-size: 15px;
+  margin: 0 10px 25px;
 `
 
 export const ContactInfoItemTitle = styled.p<any>`
-  color: ${({ theme }) => `${theme.palette.white}`};
+  margin: 0 0 10px;
+  color: ${({ theme }) => `${theme.textLighter}`};
+`
+
+export const ContactInfoIcon = styled.span<any>`
+  margin-right: 12px;
+`
+
+export const ContactInfo = styled.span<any>``
+
+export const ContactInfoLink = styled.a<any>`
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+`
+
+export const Line = styled.div<any>`
+  width: 100%;
+  height: 1px;
+  margin: 30px 0 50px;
+  background: ${({ theme }) => theme.line};
+  opacity: 0.15;
+`
+
+export const SocialIconList = styled.ul<any>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+`
+
+export const SocialIconItem = styled.li<any>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  padding: 0;
+  list-style-type: none;
+`
+
+export const SocialIconLink = styled.a<any>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid ${({ theme }) => theme.palette.white};
+  transition: all 0.3s;
+  color: ${({ theme }) => theme.palette.white};
+  font-size: 22px;
+  &:hover {
+    background: ${({ theme }) => theme.palette.white};
+    color: ${({ theme }) => theme.primary};
+  }
 `

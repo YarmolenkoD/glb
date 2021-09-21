@@ -1,4 +1,8 @@
 import { useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
+
+// components
+import ScrollAnimation from 'react-animate-on-scroll'
 
 // styled components
 import { Container, SectionTitle } from 'theme/elements'
@@ -6,6 +10,9 @@ import * as Elements from './elements'
 
 // images
 import { home, hook, skyline, stairs } from 'assets/images'
+
+// constants
+import { FADE_ANIMATION_DURATION } from 'constant-variables'
 
 const SERVICES_ITEMS = [
   {
@@ -57,10 +64,11 @@ const SERVICES_ITEMS = [
 ]
 
 export function Features() {
+  const { t } = useTranslation()
 
   const renderListItem = useCallback((item, index) => {
     return <Elements.FeatureListItem key={`feature-list-item-${index}`}>
-      - {item}
+      - {t(item)}
     </Elements.FeatureListItem>
   }, [])
 
@@ -69,7 +77,7 @@ export function Features() {
       <Elements.FeatureIconCircle>
         <Elements.FeatureIcon src={icon} />
       </Elements.FeatureIconCircle>
-      <Elements.FeatureTitle>{title}</Elements.FeatureTitle>
+      <Elements.FeatureTitle>{t(title)}</Elements.FeatureTitle>
       <Elements.FeatureItemList>
         {list.map(renderListItem)}
       </Elements.FeatureItemList>
@@ -79,12 +87,16 @@ export function Features() {
   return <Elements.Wrapper>
     <Container>
       <Elements.InnerContainer>
-        <SectionTitle>
-          Features
-        </SectionTitle>
-        <Elements.FeaturesList>
-          {SERVICES_ITEMS.map(renderItem)}
-        </Elements.FeaturesList>
+        <ScrollAnimation animateOnce duration={FADE_ANIMATION_DURATION} animateIn="fadeInUp">
+          <SectionTitle>
+            {t('Features')}
+          </SectionTitle>
+        </ScrollAnimation>
+        <ScrollAnimation animateOnce duration={FADE_ANIMATION_DURATION} animateIn="fadeInUp">
+          <Elements.FeaturesList>
+            {SERVICES_ITEMS.map(renderItem)}
+          </Elements.FeaturesList>
+        </ScrollAnimation>
       </Elements.InnerContainer>
     </Container>
   </Elements.Wrapper>

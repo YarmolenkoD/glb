@@ -1,4 +1,5 @@
 import Slider from 'react-slick'
+import { useTranslation } from 'react-i18next'
 
 // styled components
 import { Container, LinkButton } from 'theme/elements'
@@ -24,6 +25,8 @@ interface IProps {
 }
 
 export const Hero = (props: IProps) => {
+  const { t } = useTranslation()
+
   const {
     fullScreen,
     title,
@@ -43,17 +46,17 @@ export const Hero = (props: IProps) => {
       <Container>
         {
           title && <Elements.Title>
-            {title}
+            {t(title)}
           </Elements.Title>
         }
         {
           description && <Elements.Text>
-            {description}
+            {t('description')}
           </Elements.Text>
         }
         {
           showLearnMore && <LinkButton to="/about-us">
-            Learn more
+            {t('Learn more')}
           </LinkButton>
         }
       </Container>
