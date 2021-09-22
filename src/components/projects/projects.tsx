@@ -55,11 +55,16 @@ export function Projects(props: IProps) {
     return <Elements.ProjectItem
       onClick={goToProject.bind(null, item.id)}
       key={`project-item-${item.id}-${index}`}
-      bg={item?.images?.[0]}
     >
-      <Elements.ProjectHoverBox>
-        <Elements.ProjectTitle>{t(item.title)}</Elements.ProjectTitle>
-      </Elements.ProjectHoverBox>
+      <ScrollAnimation animateOnce duration={FADE_ANIMATION_DURATION} animateIn="fadeInUp">
+        <Elements.ProjectItemInnerContainer bg={item?.images?.[0]}>
+          <Elements.ProjectHoverBox>
+            <Elements.ProjectTitle>
+              {t(item.title)}
+            </Elements.ProjectTitle>
+          </Elements.ProjectHoverBox>
+        </Elements.ProjectItemInnerContainer>
+      </ScrollAnimation>
     </Elements.ProjectItem>
   }, [goToProject])
 
@@ -73,11 +78,9 @@ export function Projects(props: IProps) {
             </SectionTitle>
           </ScrollAnimation>
         }
-        <ScrollAnimation animateOnce duration={FADE_ANIMATION_DURATION} animateIn="fadeInUp">
-          <Elements.ProjectsList>
-            {projects?.map(renderItem)}
-          </Elements.ProjectsList>
-        </ScrollAnimation>
+        <Elements.ProjectsList>
+          {projects?.map(renderItem)}
+        </Elements.ProjectsList>
         {
           button && <ScrollAnimation animateOnce duration={FADE_ANIMATION_DURATION} animateIn="fadeInUp">
             <Elements.ButtonContainer>

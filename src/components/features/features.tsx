@@ -14,6 +14,9 @@ import { home, hook, skyline, stairs } from 'assets/images'
 // constants
 import { FADE_ANIMATION_DURATION } from 'constant-variables'
 
+// utils
+import { calcItemAnimationDuration } from 'utils'
+
 const SERVICES_ITEMS = [
   {
     icon: skyline,
@@ -74,13 +77,17 @@ export function Features() {
 
   const renderItem = useCallback(({ icon, list, title }, index) => {
     return <Elements.FeatureItem key={`feature-item-${index}`}>
-      <Elements.FeatureIconCircle>
-        <Elements.FeatureIcon src={icon} />
-      </Elements.FeatureIconCircle>
-      <Elements.FeatureTitle>{t(title)}</Elements.FeatureTitle>
-      <Elements.FeatureItemList>
-        {list.map(renderListItem)}
-      </Elements.FeatureItemList>
+      <ScrollAnimation animateOnce duration={calcItemAnimationDuration(index)} animateIn="fadeInUp">
+        <Elements.FeatureItemInnerContainer>
+          <Elements.FeatureIconCircle>
+            <Elements.FeatureIcon src={icon} />
+          </Elements.FeatureIconCircle>
+          <Elements.FeatureTitle>{t(title)}</Elements.FeatureTitle>
+          <Elements.FeatureItemList>
+            {list.map(renderListItem)}
+          </Elements.FeatureItemList>
+        </Elements.FeatureItemInnerContainer>
+      </ScrollAnimation>
     </Elements.FeatureItem>
   }, [renderListItem])
 
@@ -92,11 +99,9 @@ export function Features() {
             {t('Features')}
           </SectionTitle>
         </ScrollAnimation>
-        <ScrollAnimation animateOnce duration={FADE_ANIMATION_DURATION} animateIn="fadeInUp">
-          <Elements.FeaturesList>
-            {SERVICES_ITEMS.map(renderItem)}
-          </Elements.FeaturesList>
-        </ScrollAnimation>
+        <Elements.FeaturesList>
+          {SERVICES_ITEMS.map(renderItem)}
+        </Elements.FeaturesList>
       </Elements.InnerContainer>
     </Container>
   </Elements.Wrapper>

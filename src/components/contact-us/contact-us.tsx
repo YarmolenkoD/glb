@@ -12,7 +12,16 @@ import { Container } from 'theme/elements'
 import * as Elements from './elements'
 
 // constants
-import { ADDRESS, EMAIL, PHONE_NUMBER, FORMATTED_PHONE_NUMBER, FADE_ANIMATION_DURATION } from 'constant-variables'
+import {
+  ADDRESS,
+  EMAIL,
+  PHONE_NUMBER,
+  FORMATTED_PHONE_NUMBER,
+  FADE_ANIMATION_DURATION,
+} from 'constant-variables'
+
+// utils
+import { calcItemAnimationDuration } from 'utils'
 
 const CONTACT_INFO_ITEMS = [
   {
@@ -68,9 +77,13 @@ export function ContactUs() {
 
   const renderSocialItem = useCallback((item, index) => {
     return <Elements.SocialIconItem key={`social-item-${index}`}>
-      <Elements.SocialIconLink target='_blank' href={item.href}>
-        <FontAwesomeIcon icon={item.icon} />
-      </Elements.SocialIconLink>
+      <ScrollAnimation animateOnce duration={calcItemAnimationDuration(index)} animateIn="fadeInUp">
+        <Elements.SocialItemInnerContainer>
+          <Elements.SocialIconLink target='_blank' href={item.href}>
+            <FontAwesomeIcon icon={item.icon} />
+          </Elements.SocialIconLink>
+        </Elements.SocialItemInnerContainer>
+      </ScrollAnimation>
     </Elements.SocialIconItem>
   }, [])
 
@@ -85,11 +98,11 @@ export function ContactUs() {
           </ScrollAnimation>
         </Elements.ContactInfoWrapper>
         <Elements.Line />
-        <ScrollAnimation animateOnce duration={FADE_ANIMATION_DURATION} animateIn="fadeInUp">
+        {/*<ScrollAnimation animateOnce duration={FADE_ANIMATION_DURATION} animateIn="fadeInUp">*/}
           <Elements.SocialIconList>
             {SOCIAL_ITEMS.map(renderSocialItem)}
           </Elements.SocialIconList>
-        </ScrollAnimation>
+        {/*</ScrollAnimation>*/}
       </Elements.InnerContainer>
     </Container>
   </Elements.Wrapper>

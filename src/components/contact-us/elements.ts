@@ -122,12 +122,15 @@ export const SocialIconList = styled.ul<any>`
 `
 
 export const SocialIconItem = styled.li<any>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0 5px;
   padding: 0;
   list-style-type: none;
+`
+
+export const SocialItemInnerContainer = styled.div<any>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const SocialIconLink = styled.a<any>`

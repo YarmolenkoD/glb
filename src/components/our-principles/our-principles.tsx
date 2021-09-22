@@ -1,7 +1,8 @@
-import Slider from 'react-slick'
+import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
 // components
+import Slider from 'react-slick'
 import ScrollAnimation from 'react-animate-on-scroll'
 
 // styled components
@@ -13,7 +14,6 @@ import { FADE_ANIMATION_DURATION } from 'constant-variables'
 
 // data
 import { OUR_PRINCIPLES } from './data'
-import { useCallback } from 'react';
 
 const SLIDER_SETTINGS = {
   dots: true,

@@ -18,10 +18,13 @@ export const FeaturesList = styled.ul<any>`
 `
 
 export const FeatureItem = styled.li<any>`
+   padding: 0 15px;
+`
+
+export const FeatureItemInnerContainer = styled.div<any>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 15px;
 `
 
 export const FeatureIconCircle = styled.div<any>`

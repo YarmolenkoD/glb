@@ -18,10 +18,13 @@ export const ProjectsList = styled.ul<any>`
 `
 
 export const ProjectItem = styled.li<any>`
+  width: 33.33333333%;
+`
+
+export const ProjectItemInnerContainer = styled.div<any>`
+  padding: 60% 0 0;
   position: relative;
   overflow: hidden;
-  width: 33.33333333%;
-  padding: 20% 25px 0 25px;
   background: url(${({ bg }) => bg}) no-repeat center/cover;
   cursor: pointer;
   border: 1px solid ${({ theme }) => theme.palette.white};
