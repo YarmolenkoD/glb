@@ -16,14 +16,14 @@ import { FADE_ANIMATION_DURATION } from 'constant-variables'
 import { OUR_PRINCIPLES } from './data'
 
 const SLIDER_SETTINGS = {
-  dots: true,
+  dots: false,
+  arrows: false,
   infinite: true,
   autoplay: true,
   speed: 700,
   autoplaySpeed: 10000,
   slidesToShow: 1,
   slidesToScroll: 1,
-  customPaging: () => <div className="slick-custom-dot" />,
 }
 
 export function OurPrinciples() {

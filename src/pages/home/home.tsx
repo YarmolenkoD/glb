@@ -1,5 +1,5 @@
 // components
-import { Hero, Features, Projects } from 'components'
+import { Hero, Features, Projects, OurPrinciples } from 'components'
 
 export function Home () {
   return (
@@ -7,6 +7,7 @@ export function Home () {
       <Hero fullScreen showLearnMore />
       <Features />
       <Projects />
+      <OurPrinciples />
     </>
   )
 }

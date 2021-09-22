@@ -10,16 +10,12 @@ import * as Elements from './elements'
 import { SwitchLanguage } from 'components'
 
 // images
-import { logo } from 'assets/images'
+import { textLogo } from 'assets/images'
 
 const NAVIGATION_ITEMS = [
   {
     path: '/',
     title: 'Home',
-  },
-  {
-    path: '/about-us',
-    title: 'About us',
   },
   {
     path: '/projects',
@@ -73,7 +69,7 @@ export function Navigation() {
     <Container>
       <Elements.InnerContainer>
         <Elements.LogoContainer>
-          <Elements.Logo onClick={onLogoClick} src={logo} alt="GlB construction" />
+          <Elements.Logo onClick={onLogoClick} src={textLogo} alt="GlB construction" />
           <SwitchLanguage />
         </Elements.LogoContainer>
         <Elements.Nav>

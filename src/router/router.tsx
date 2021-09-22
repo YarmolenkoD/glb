@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom'
 
 // pages
-import { Home, SingleProject, Projects, AboutUs } from 'pages'
+import { Home, SingleProject, Projects } from 'pages'
 
 // components
 import { ContactUs, Footer, Navigation } from 'components'
@@ -21,9 +21,6 @@ export function Router() {
         <Switch>
           <Route exact path="/">
             <Home />
-          </Route>
-          <Route exact path="/about-us">
-            <AboutUs />
           </Route>
           <Route exact path="/projects">
             <Projects />
