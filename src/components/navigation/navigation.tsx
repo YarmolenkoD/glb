@@ -1,42 +1,29 @@
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 // styled components
+import { breakpoints } from 'theme'
 import { Container } from 'theme/elements'
 import * as Elements from './elements'
 
 // components
 import { SwitchLanguage } from 'components'
+import BurgerMenu from './burger-menu/burger-menu'
+
+// hooks
+import { useBreakpoint } from 'hooks'
 
 // images
-import { textLogo } from 'assets/images'
+import { textLogo, logo } from 'assets/images'
 
-const NAVIGATION_ITEMS = [
-  {
-    path: '/',
-    title: 'Home',
-  },
-  {
-    path: '/projects',
-    title: 'Our projects',
-    isActive: (match, location) => location.pathname.match(/projects/),
-  },
-]
-
-interface IExtraProps {
-  isActive?: (match: any, location: any) => boolean
-}
-
-interface IRenderItemProps {
-  isActive?: (match: any, location: any) => boolean
-  title: string
-  path: string
-}
+// data
+import { NAVIGATION_ITEMS, IRenderItemProps, IExtraProps } from './data'
 
 export function Navigation() {
   const { t } = useTranslation()
   const history = useHistory()
+  const breakpoint = useBreakpoint()
 
   const onLogoClick = useCallback(() => {
     if (history?.location?.pathname === '/') {
@@ -65,16 +52,22 @@ export function Navigation() {
     </Elements.Item>
   }
 
+  const logoIcon = useMemo(() => breakpoint > breakpoints.phone ? textLogo : logo, [breakpoint])
+
   return <Elements.Wrapper>
     <Container>
       <Elements.InnerContainer>
         <Elements.LogoContainer>
-          <Elements.Logo onClick={onLogoClick} src={textLogo} alt="GlB construction" />
+          <Elements.Logo onClick={onLogoClick} src={logoIcon} alt="GlB construction" />
           <SwitchLanguage />
         </Elements.LogoContainer>
-        <Elements.Nav>
-          {NAVIGATION_ITEMS.map(renderItem)}
-        </Elements.Nav>
+        {
+          breakpoint > breakpoints.phone ?
+            <Elements.Nav>
+              {NAVIGATION_ITEMS.map(renderItem)}
+            </Elements.Nav>
+            : <BurgerMenu items={NAVIGATION_ITEMS} />
+        }
       </Elements.InnerContainer>
     </Container>
   </Elements.Wrapper>

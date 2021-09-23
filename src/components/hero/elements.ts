@@ -5,13 +5,11 @@ import { hero1, hero2, hero3 } from 'assets/images'
 
 const SLIDER_IMAGES = [hero1, hero2, hero3]
 
-const NAVIGATION_HEIGHT = 78
-
 const FULL_SCREEN_HEIGHT = '100vh'
 const NOT_FULL_SCREEN_HEIGHT = '70vh'
 
 const getHeight = (fullScreen) => (
-  `calc(${fullScreen ? FULL_SCREEN_HEIGHT : NOT_FULL_SCREEN_HEIGHT} - ${NAVIGATION_HEIGHT}px)`
+  fullScreen ? FULL_SCREEN_HEIGHT : NOT_FULL_SCREEN_HEIGHT
 )
 
 export const Wrapper = styled.header<any>`
@@ -68,6 +66,18 @@ export const Title = styled.h1<any>`
   text-transform: uppercase;
   margin: 0 0 10px;
   color: ${({ theme }) => theme.textLighter};
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+     font-size: 62px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.phone}px) {
+     font-size: 52px;
+  }
+  @media (max-width: 460px) {
+     font-size: 42px;
+  }
+  @media (max-width: 400px) {
+     font-size: 32px;
+  }
 `
 
 export const Text = styled.p<any>`
@@ -76,4 +86,7 @@ export const Text = styled.p<any>`
   line-height: 30px;
   margin: 0 0 60px;
   color: ${({ theme }) => theme.textLighter};
+  @media (max-width: ${({ theme }) => theme.breakpoints.phone}px) {
+     font-size: 18px;
+  }
 `

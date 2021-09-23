@@ -5,6 +5,8 @@ export interface ITheme {
   primary: string,
   primaryLighter: string,
   primaryDarker: string,
+  opacityPrimary: string,
+  lighterOpacityPrimary: string,
   line: string,
   text: string,
   textLight: string,
@@ -14,6 +16,8 @@ export interface ITheme {
   error: string,
   gradient: string,
   opacityGradient: string,
+  secondaryOpacityGradient: string,
+  breakpoints: IBreakpoints,
 }
 
 export interface Action {
@@ -37,4 +41,13 @@ export interface IProject {
   description: string,
   category: string,
   images: [string],
+}
+
+export interface IBreakpoints {
+  bigLaptop: number,
+  laptop: number,
+  smallLaptop: number,
+  tablet: number,
+  phone: number,
+  smallPhone: number,
 }

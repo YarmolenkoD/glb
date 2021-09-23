@@ -98,11 +98,9 @@ export function ContactUs() {
           </ScrollAnimation>
         </Elements.ContactInfoWrapper>
         <Elements.Line />
-        {/*<ScrollAnimation animateOnce duration={FADE_ANIMATION_DURATION} animateIn="fadeInUp">*/}
-          <Elements.SocialIconList>
-            {SOCIAL_ITEMS.map(renderSocialItem)}
-          </Elements.SocialIconList>
-        {/*</ScrollAnimation>*/}
+        <Elements.SocialIconList>
+          {SOCIAL_ITEMS.map(renderSocialItem)}
+        </Elements.SocialIconList>
       </Elements.InnerContainer>
     </Container>
   </Elements.Wrapper>

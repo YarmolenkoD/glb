@@ -79,9 +79,11 @@ export function ProjectsInfiniteList() {
   return <Elements.Wrapper>
     <Container>
       <Elements.InnerContainer>
-        <Elements.FiltersContainer>
-          {filters.map(renderFilterItem)}
-        </Elements.FiltersContainer>
+        {
+          filters.length > 0 && <Elements.FiltersContainer>
+            {filters.map(renderFilterItem)}
+          </Elements.FiltersContainer>
+        }
         <InfiniteScroll
           dataLength={projects?.length}
           next={onLoadMore}

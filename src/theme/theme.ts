@@ -1,9 +1,18 @@
 import { palette } from './palette'
 
 // types
-import { ITheme, Theme } from 'types'
+import { IBreakpoints, ITheme, Theme } from 'types'
 
 export const defaultTheme: Theme = 'light'
+
+export const breakpoints: IBreakpoints = {
+  bigLaptop: 1400,
+  laptop: 1200,
+  smallLaptop: 992,
+  tablet: 768,
+  phone: 576,
+  smallPhone: 320,
+}
 
 const light: ITheme = {
   palette,
@@ -29,6 +38,14 @@ const light: ITheme = {
    * The main tinting color, but darker.
    */
   primaryDarker: palette.darkBlue,
+  /**
+   * The main opacity tinting color.
+   */
+  opacityPrimary: palette.blue + '80',
+  /**
+   * The lighter opacity tinting color.
+   */
+  lighterOpacityPrimary: palette.blue + '40',
   /**
    * A subtle color used for borders and lines.
    */
@@ -65,6 +82,14 @@ const light: ITheme = {
    * Primary opacity gradient.
    */
   opacityGradient: `linear-gradient(to right, rgba(99, 114, 255, 0.8) 0%, rgba(92, 169, 251, 0.8) 100%)`,
+  /**
+   * Secondary opacity gradient.
+   */
+  secondaryOpacityGradient: `linear-gradient(to right, rgba(99, 114, 255, 0.3) 0%, rgba(92, 169, 251, 0.3) 100%)`,
+  /**
+   * Main media breakpoints.
+   */
+  breakpoints: breakpoints,
 }
 
 const dark: ITheme = {
@@ -92,6 +117,14 @@ const dark: ITheme = {
    */
   primaryDarker: palette.darkBlue,
   /**
+   * The main opacity tinting color.
+   */
+  opacityPrimary: palette.blue + '80',
+  /**
+   * The lighter opacity tinting color.
+   */
+  lighterOpacityPrimary: palette.blue + '40',
+  /**
    * A subtle color used for borders and lines.
    */
   line: palette.grayLighter,
@@ -127,6 +160,14 @@ const dark: ITheme = {
    * Primary opacity gradient.
    */
   opacityGradient: `linear-gradient(to right, rgba(99, 114, 255, 0.8) 0%, rgba(92, 169, 251, 0.8) 100%)`,
+  /**
+   * Secondary opacity gradient.
+   */
+  secondaryOpacityGradient: `linear-gradient(to right, rgba(99, 114, 255, 0.4) 0%, rgba(92, 169, 251, 0.3) 100%)`,
+  /**
+   * Main media breakpoints.
+   */
+  breakpoints: breakpoints,
 }
 
 export const theme = {

@@ -2,9 +2,10 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 export const Wrapper = styled.div<any>`
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 100;
+  width: 100%;
   background: ${({ theme }) => `${theme.palette.white}`};
   border-bottom: 1px solid rgba(231, 231, 231, 0);
   box-shadow: 0 0 10px rgb(0 0 0 / 15%);
@@ -65,4 +66,8 @@ export const Logo = styled.img<any>`
   max-width: 500px;
   margin-right: 35px;
   cursor: pointer;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 50px;
+    margin: 0 20px;
+  }
 `

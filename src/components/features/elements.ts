@@ -12,13 +12,25 @@ export const InnerContainer = styled.div<any>`
 export const FeaturesList = styled.ul<any>`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: 60px 0 0;
   padding: 0;
   list-style-type: none;
 `
 
 export const FeatureItem = styled.li<any>`
-   padding: 0 15px;
+  width: 25%;
+  padding: 0 15px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallLaptop}px) {
+     width: 50%;
+     margin-bottom: 25px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.phone}px) {
+     width: 100%;
+     &:last-child {
+        margin-bottom: 0;
+     }
+  }
 `
 
 export const FeatureItemInnerContainer = styled.div<any>`
@@ -49,6 +61,7 @@ export const FeatureTitle = styled.h3`
   font-size: 20px;
   font-weight: 600;
   color: ${({ theme }) => theme.text};
+  text-align: center;
 `
 
 export const FeatureItemList = styled.ul`

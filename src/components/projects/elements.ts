@@ -19,6 +19,12 @@ export const ProjectsList = styled.ul<any>`
 
 export const ProjectItem = styled.li<any>`
   width: 33.33333333%;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 50%;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.phone}px) {
+    width: 100%;
+  }
 `
 
 export const ProjectItemInnerContainer = styled.div<any>`
@@ -30,6 +36,16 @@ export const ProjectItemInnerContainer = styled.div<any>`
   border: 1px solid ${({ theme }) => theme.palette.white};
  
   &:hover {
+    & > div {
+      opacity: 1;
+    }
+    & h4 {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     & > div {
       opacity: 1;
     }
@@ -54,6 +70,12 @@ export const ProjectHoverBox = styled.div<any>`
   cursor: pointer;
   opacity: 0;
   background: ${({ theme }) => theme.opacityGradient};
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    background: ${({ theme }) => theme.lighterOpacityPrimary};
+    &:hover {
+      background: ${({ theme }) => theme.opacityPrimary};
+    }
+  }
 `
 
 export const ProjectTitle = styled.h4<any>`
@@ -66,6 +88,12 @@ export const ProjectTitle = styled.h4<any>`
   transition: all 0.3s;
   text-align: center;
   opacity: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.phone}px) {
+    font-size: 24px;
+  }
+  @media (max-width: 400px) {
+    font-size: 20px;
+  }
 `
 
 export const ButtonContainer = styled.div<any>`

@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
 import Slider from 'react-slick'
 
@@ -44,10 +44,12 @@ export default function Project (props: IProps) {
     />
   }, [])
 
+  const sliderSettings = useMemo(() => ({...SLIDER_SETTINGS, dots: images.length < 5 }), [images.length])
+
   const renderSlider = useCallback(() => {
     return <Elements.SliderWrapper>
       <Elements.SliderContainer>
-        <Slider {...SLIDER_SETTINGS}>
+        <Slider {...sliderSettings}>
           {images.map(renderSliderItem)}
         </Slider>
       </Elements.SliderContainer>

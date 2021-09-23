@@ -7,6 +7,7 @@ import * as Elements from './elements'
 
 const SLIDER_SETTINGS = {
   dots: true,
+  arrows: false,
   infinite: true,
   autoplay: true,
   fade: true,

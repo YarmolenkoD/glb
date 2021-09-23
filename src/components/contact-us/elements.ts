@@ -66,10 +66,14 @@ export const ContactInfoWrapper = styled.div<any>`
   align-items: center;
   width: 100%;
   padding-left: 30px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    padding-left: 0;
+  }
 `
 
 export const ContactInfoList = styled.ul<any>`
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
 `
@@ -85,6 +89,11 @@ export const ContactInfoItem = styled.li<any>`
   flex-direction: column;
   font-size: 15px;
   margin: 0 10px 25px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
 `
 
 export const ContactInfoItemTitle = styled.p<any>`
