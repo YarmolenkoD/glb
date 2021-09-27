@@ -1,5 +1,13 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { Link as RouterLink } from 'react-router-dom'
+
+export const Screen = styled.div<any>`
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ width: 100%;
+ min-height: 100vh;
+`
 
 export const Container = styled.div<any>`
   max-width: 1200px;
@@ -29,6 +37,12 @@ export const Button = styled.button<any>`
   }
 `;
 
+export const SecondaryButton = styled(Button)<any>`
+  background: transparent;
+  border: 1px solid ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.primary};
+`;
+
 export const LinkButton = styled(RouterLink)<any>`
   display: inline-block;
   font-family: "Raleway", sans-serif;
@@ -52,3 +66,23 @@ export const LinkButton = styled(RouterLink)<any>`
     background-color: ${({ theme }) => theme.primaryDarker};
   }
 `;
+
+export const SectionTitle = styled.h2<any>`
+  position: relative;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  font-weight: 700;
+  font-size: 36px;
+  color: ${({ theme }) => theme.text};
+  text-align: center;
+  &:after {
+    position: absolute;
+    content: '';
+    background: ${({ theme }) => theme.gradient};
+    height: 4px;
+    width: 60px;
+    bottom: 0;
+    margin-left: -30px;
+    left: 50%;
+  }
+`

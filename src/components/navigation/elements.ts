@@ -1,16 +1,16 @@
 import styled from 'styled-components'
-
-import {
-  NavLink
-} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export const Wrapper = styled.div<any>`
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
   background: ${({ theme }) => `${theme.palette.white}`};
   border-bottom: 1px solid rgba(231, 231, 231, 0);
   box-shadow: 0 0 10px rgb(0 0 0 / 15%);
   padding: 15px 0;
 `
-
 
 export const InnerContainer = styled.div<any>`
   display: flex;
@@ -31,7 +31,7 @@ export const Item = styled.li<any>`
   align-items: center;
 `
 
-export const Link = styled(NavLink)`
+export const Link = styled(NavLink)<any>`
   position: relative;
   padding: 10px 4px;
   text-decoration: none;
@@ -57,6 +57,17 @@ export const Link = styled(NavLink)`
   }
 `
 
+export const LogoContainer = styled.div<any>`
+  display: flex;
+  align-items: center;
+`
+
 export const Logo = styled.img<any>`
   max-width: 500px;
+  margin-right: 35px;
+  cursor: pointer;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 50px;
+    margin: 0 20px;
+  }
 `
