@@ -64,7 +64,7 @@ export const Title = styled.h1<any>`
   font-size: 82px;
   font-weight: 700;
   text-transform: uppercase;
-  margin: 0 0 10px;
+  margin: 70px 0 10px;
   color: ${({ theme }) => theme.textLighter};
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
      font-size: 62px;
