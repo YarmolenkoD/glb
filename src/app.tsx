@@ -1,12 +1,16 @@
-import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
+import { useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
+import { initReactI18next } from 'react-i18next'
+import i18n from 'i18next'
 
 // hooks
 import { useTheme } from 'hooks'
 
 // store
 import { ReduxProvider } from 'redux-store'
+
+// services
+import { Firebase } from 'services'
 
 // router
 import { Router } from 'router'
@@ -35,6 +39,10 @@ i18n
 
 function App() {
   const theme = useTheme()
+
+  useEffect(() => {
+    Firebase.initialization()
+  }, [])
 
   return (
     <ThemeProvider theme={theme}>

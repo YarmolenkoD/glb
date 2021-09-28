@@ -12,6 +12,7 @@ const firebaseConfig = {
 
 export const Firebase = {
   initialization: () => {
+    console.log('FIREBASE INITIALIZATION: ', firebaseConfig)
     initializeApp(firebaseConfig)
   }
 }
