@@ -8,6 +8,9 @@ import images7 from './7'
 import images8 from './8'
 import images9 from './9'
 import images10 from './10'
+import images11 from './11'
+import images12 from './12'
+import images13 from './13'
 
 export default {
   1: images1,
@@ -20,4 +23,7 @@ export default {
   8: images8,
   9: images9,
   10: images10,
+  11: images11,
+  12: images12,
+  13: images13,
 }
