@@ -87,7 +87,7 @@ export function ProjectsInfiniteList() {
         <InfiniteScroll
           dataLength={projects?.length}
           next={onLoadMore}
-          loader={<h4>Loading...</h4>}
+          loader={null}
           hasMore={!loading && hasMore}
         >
           <Elements.ProjectsList>
