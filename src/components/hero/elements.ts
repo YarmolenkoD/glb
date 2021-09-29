@@ -24,6 +24,7 @@ export const InnerContainer = styled.div<any>`
   max-width: 750px;
   height: ${({ fullScreen }) => getHeight(fullScreen)};
   margin: 0 auto;
+  padding-top: 96px;
   text-align: center;
 `
 
@@ -55,7 +56,7 @@ export const SliderContainer = styled.div<any>`
 
 export const SliderItem = styled.div<any>`
   width: 100%;
-  height: ${({ fullScreen }) => getHeight(fullScreen)};
+  min-height: ${({ fullScreen }) => getHeight(fullScreen)};
   background: linear-gradient(-45deg, rgb(0, 0, 0, 0.5), rgb(96, 141, 253, 0.5)), 
   url(${({ item }) => SLIDER_IMAGES[item - 1]}) no-repeat center/cover fixed;
 `
@@ -64,7 +65,7 @@ export const Title = styled.h1<any>`
   font-size: 82px;
   font-weight: 700;
   text-transform: uppercase;
-  margin: 70px 0 10px;
+  margin: 0 0 10px;
   color: ${({ theme }) => theme.textLighter};
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
      font-size: 62px;

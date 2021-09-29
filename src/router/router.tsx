@@ -8,7 +8,7 @@ import {
 import { Home, SingleProject, Projects } from 'pages'
 
 // components
-import { ContactUs, Footer, Navigation } from 'components'
+import { ContactUs, Footer, Navigation, ScrollToTop } from 'components'
 
 // styled components
 import { Screen } from 'theme/elements'
@@ -32,6 +32,7 @@ export function Router() {
         <ContactUs />
         <Footer />
       </Screen>
+      <ScrollToTop />
     </BrowserRouter>
   );
 }
