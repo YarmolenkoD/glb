@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app'
+import { initializeAnalytics } from 'firebase/analytics'
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -13,6 +14,7 @@ const firebaseConfig = {
 export const Firebase = {
   initialization: () => {
     console.log('FIREBASE INITIALIZATION: ', firebaseConfig)
-    initializeApp(firebaseConfig)
+    const app = initializeApp(firebaseConfig)
+    initializeAnalytics(app, { })
   }
 }
