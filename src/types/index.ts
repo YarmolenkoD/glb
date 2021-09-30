@@ -18,6 +18,7 @@ export interface ITheme {
   opacityGradient: string,
   secondaryOpacityGradient: string,
   breakpoints: IBreakpoints,
+  placeholder: string
 }
 
 export interface Action {
@@ -35,12 +36,19 @@ export interface IThemeContext {
 }
 
 export interface IProject {
-  id: number,
+  id: string,
   title: string,
+  subTitle?: string,
+  description?: string,
   country: string,
-  description: string,
+  city: string,
+  amount?: string,
+  duration?: string,
+  year?: string,
   category: string,
-  images: [string],
+  type?: string[],
+  status: string,
+  images: string[],
 }
 
 export interface IBreakpoints {

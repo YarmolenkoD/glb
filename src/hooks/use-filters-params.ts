@@ -20,9 +20,11 @@ export const useFiltersParams = (): IFilterResponse => {
 
     const country = params.get('country')
     const category = params.get('category')
+    const tab = params.get('tab')
 
     if (country) newFilters.push({ key: 'country', active: true, value: country })
     if (category) newFilters.push({ key: 'category', active: true, value: category })
+    if (tab) newFilters.push({ key: 'status', active: true, value: tab })
 
     setFilters(newFilters)
   }, [params])

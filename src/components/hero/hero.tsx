@@ -19,7 +19,7 @@ const SLIDER_SETTINGS = {
 }
 
 interface IProps {
-  title?: string
+  title?: string|null
   description?: string|null
   showLearnMore?: boolean
   fullScreen?: boolean,

@@ -1,11 +1,12 @@
 {
-  "en": [
+  "projects": [
     {
       "id": "1",
       "title": "Ukraine Dnipro Metro Construction",
       "country": "Ukraine",
-      "description": "Double line 4 km length 4 shaft average shaft depth 75 mt.",
+      "city": "Dnipro",
       "category": "infrastructure",
+      "status": "progress",
       "images": []
     },
     {
@@ -15,10 +16,11 @@
       "country": "Tajikistan",
       "city": "Dushanbe",
       "amount": "18.300 m2",
-      "duration": "10 Months",
+      "duration": "10",
       "year": "2008",
       "category": "residence",
       "type": ["Concrete construction"],
+      "status": "completed",
       "images": []
     },
     {
@@ -28,10 +30,11 @@
       "country": "Tajikistan",
       "city": "Dushanbe",
       "amount": "13.800 m2",
-      "duration": "16 Months",
+      "duration": "16",
       "year": "2007",
       "category": "building",
       "type": ["Concrete construction"],
+      "status": "completed",
       "images": []
     },
     {
@@ -41,36 +44,39 @@
       "country": "Tajikistan",
       "city": "Dushanbe",
       "amount": "17.500 m2",
-      "duration": "26 Months",
+      "duration": "26",
       "year": "2014",
       "category": "building",
       "type": ["Concrete construction", "Project", "Facade"],
+      "status": "completed",
       "images": []
     },
     {
       "id": "5",
       "title": "RC COLA",
-      "subTitle": "WATER&COLA FACTORY",
+      "subTitle": "WATER & COLA FACTORY",
       "country": "Tajikistan",
       "city": "Dushanbe",
       "amount": "16.500 m2",
-      "duration": "16 Months",
+      "duration": "16",
       "year": "2014",
       "category": "building",
       "type": ["Project", "Facade"],
+      "status": "completed",
       "images": []
     },
     {
       "id": "6",
       "title": "HOSHNUD 23",
-      "subTitle": "RESIDENCE & BUSSINES CENTER",
+      "subTitle": "Residence & business center",
       "country": "Tajikistan",
       "city": "Dushanbe",
       "amount": "19.500 m2",
-      "duration": "19 Months",
+      "duration": "19",
       "year": "2014",
       "category": "building",
       "type": ["Project", "Facade"],
+      "status": "completed",
       "images": []
     },
     {
@@ -80,36 +86,39 @@
       "country": "Turkey",
       "city": "Istanbul",
       "amount": "2.700 m3",
-      "duration": "9 Months",
+      "duration": "9",
       "year": "2004",
       "category": "building",
       "type": ["Precast  Production", "Montage"],
+      "status": "completed",
       "images": []
     },
     {
       "id": "8",
       "title": "PRIVATE",
-      "subTitle": "VILLA",
+      "subTitle": "Villa",
       "country": "Tajikistan",
       "city": "Dushanbe",
       "amount": "3.600 m2",
-      "duration": "18 Months",
+      "duration": "18",
       "year": "2016",
       "category": "building",
-      "type": ["Concrete Construction", "Project", "Facade"],
+      "type": ["Concrete construction", "Project", "Facade"],
+      "status": "completed",
       "images": []
     },
     {
       "id": "9",
       "title": "HACI SHERIF",
-      "subTitle": "BAZAAR & BUSINESS CENTER",
+      "subTitle": "Bazaar & business center",
       "country": "Tajikistan",
       "city": "Kurganteppa",
       "amount": "38.600 m2",
-      "duration": "28 Months",
+      "duration": "28",
       "year": "2009",
       "category": "building",
-      "type": ["Concrete Construction", "Project", "Facade", "Infrastructures"],
+      "type": ["Concrete construction", "Project", "Facade", "Infrastructures"],
+      "status": "completed",
       "images": []
     },
     {
@@ -119,36 +128,38 @@
       "country": "Turkey",
       "city": "Istanbul",
       "amount": "5.600 m3",
-      "duration": "12 Months",
+      "duration": "12",
       "year": "2003",
       "category": "infrastructure",
       "type": ["Precast  Production", "Montage"],
+      "status": "completed",
       "images": []
     },
     {
       "id": "11",
       "title": "CONCRETE ELECTRIC POLES",
-      "subTitle": "WESTERN PORT PRECAST WALLS",
       "country": "Turkey",
       "city": "Balikesir",
       "amount": "4.000 m3",
-      "duration": "16 Months",
+      "duration": "16",
       "year": "2005",
       "category": "electromechanic",
       "type": ["Production"],
+      "status": "completed",
       "images": []
     },
     {
       "id": "12",
       "title": "AGA KHAN",
-      "subTitle": "HOSPITAL BUILDING",
+      "subTitle": "Hospital building",
       "country": "Tajikistan",
       "city": "Khorog",
       "amount": "7.700 m2",
-      "duration": "18 Months",
+      "duration": "18",
       "year": "2017",
       "category": "building",
-      "type": ["Concrete Construction"],
+      "type": ["Concrete construction"],
+      "status": "completed",
       "images": []
     }
   ]

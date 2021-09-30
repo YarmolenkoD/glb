@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import Slider from 'react-slick'
 
 // styled components
@@ -13,7 +13,7 @@ import Images from 'assets/images/data/projects'
 import { IProject } from 'types'
 
 interface IProps {
-  data: IProject
+  data: IProject|null
 }
 
 const SLIDER_SETTINGS = {
@@ -28,14 +28,11 @@ const SLIDER_SETTINGS = {
 }
 
 export default function Project (props: IProps) {
-  const history = useHistory()
+  const { t } = useTranslation()
+
   const { data: project } = props
 
-  const images = Images[project.id]
-
-  const goToProjectsByCountry = useCallback((country) => {
-    history.push(`/projects?country=${country}`)
-  }, [])
+  const images = useMemo(() => project ? Images[project.id] : [], [project])
 
   const renderSliderItem = useCallback((item, index) => {
     return <Elements.SliderItem
@@ -53,25 +50,27 @@ export default function Project (props: IProps) {
           {images.map(renderSliderItem)}
         </Slider>
       </Elements.SliderContainer>
-      <Elements.Country onClick={() => goToProjectsByCountry(project.country)}>
-        {project.country}
-      </Elements.Country>
     </Elements.SliderWrapper>
-  }, [renderSliderItem, images])
+  }, [renderSliderItem, images, sliderSettings])
 
   const renderInfo = useCallback(() => {
     return <Elements.InfoContainer>
-      <Elements.Title>{project.title}</Elements.Title>
-      <Elements.Description>{project.description}</Elements.Description>
+      {!!project?.title && <Elements.Title>{project.title}</Elements.Title>}
+      {!!project?.subTitle && <Elements.SubTitle>{t(project.subTitle)}</Elements.SubTitle>}
+      {!!project?.description && <Elements.Description>{project.description}</Elements.Description>}
+      {!!project?.type?.length && <Elements.Info>{t('Type of work')}: {project.type.map((el) => t(el)).join(', ')}</Elements.Info>}
+      {!!project?.amount && <Elements.Info>{t('Amount')}: {t(project.amount)}</Elements.Info>}
+      {!!project?.duration && <Elements.Info>{t('Duration')}: {project.duration} {t('Months')}</Elements.Info>}
+      {!!project?.year && <Elements.Info>{t('Year')}: {t(project.year)}</Elements.Info>}
     </Elements.InfoContainer>
-  }, [])
+  }, [project])
 
   return (
     <Elements.Container>
       <Container>
         <Elements.InnerContainer>
-          {renderSlider()}
-          {renderInfo()}
+          {project && renderSlider()}
+          {project && renderInfo()}
         </Elements.InnerContainer>
       </Container>
     </Elements.Container>

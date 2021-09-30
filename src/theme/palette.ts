@@ -8,6 +8,7 @@ export const palette = {
   grayLightest: "#F4F4F4",
   grayLighter: "#E0E0E0",
   grayLight: "#BEBEBE",
+  secondaryGrayLight: "#a09c9c",
   grayDark: "#717171",
   grayDarker: "#333333",
   grayDarkest: "#191919",

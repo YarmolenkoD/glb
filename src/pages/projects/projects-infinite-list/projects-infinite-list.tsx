@@ -1,21 +1,32 @@
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import update from 'immutability-helper'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 // styled components
 import { Container } from 'theme/elements'
 import * as Elements from './elements'
 
+// components
+import Tabs, { TABS } from './tabs/tabs'
+
 // hooks
-import { useProjects, useFiltersParams, IFilterResponse, IProjectsData } from 'hooks'
+import {
+  useProjects,
+  useFiltersParams,
+  useQuery,
+  IFilterResponse,
+  IProjectsData
+} from 'hooks'
 
 // constants
 import { FADE_ANIMATION_DURATION } from 'constant-variables'
 
 export function ProjectsInfiniteList() {
   const history = useHistory()
-  const [filters, setFilters]: IFilterResponse = useFiltersParams()
+
+  const params = useQuery()
+  const [activeTab, setActiveTab] = useState(TABS[0].key)
+  const [filters]: IFilterResponse = useFiltersParams()
 
   const {
     projects,
@@ -23,7 +34,19 @@ export function ProjectsInfiniteList() {
     currentPage,
     loading,
     hasMore
-  }: IProjectsData = useProjects({ initialPage: 1, filters })
+  }: IProjectsData = useProjects({
+    initialPage: 1,
+    filters
+  })
+
+  useEffect(() => {
+    const tab = params.get('tab') || activeTab
+    setActiveTab(tab)
+  }, [params, activeTab])
+
+  useEffect(() => {
+    history.push({ search: `?tab=${activeTab}` })
+  }, [activeTab])
 
   const goToProject = useCallback((id) => {
     history.push(`/projects/${id}`)
@@ -31,17 +54,7 @@ export function ProjectsInfiniteList() {
 
   const onLoadMore = useCallback(() => {
     loadMore({ page: currentPage + 1 })
-  }, [projects.length, currentPage])
-
-  const toggleFilter = useCallback((index: number) => {
-    setFilters(update(filters, {
-      [index]: {
-        active: {
-          $set: !filters[index].active
-        }
-      }
-    }))
-  }, [filters])
+  }, [currentPage])
 
   const renderItem = useCallback((item, index) => {
     return <Elements.ProjectItemAnimateContainer
@@ -61,29 +74,13 @@ export function ProjectsInfiniteList() {
     </Elements.ProjectItemAnimateContainer>
   }, [goToProject])
 
-  const renderFilterItem = useCallback(({ key, active, value }, index) => {
-    return <Elements.FilterItem
-      onClick={() => toggleFilter(index)}
-      className={active ? 'active' : ''}
-      key={`filter-item-${key}`}
-    >
-      <Elements.FilterKey>
-        {key}:
-      </Elements.FilterKey>
-      <Elements.FilterValue>
-        {value.toLowerCase()}
-      </Elements.FilterValue>
-    </Elements.FilterItem>
-  }, [filters])
-
   return <Elements.Wrapper>
     <Container>
       <Elements.InnerContainer>
-        {
-          filters.length > 0 && <Elements.FiltersContainer>
-            {filters.map(renderFilterItem)}
-          </Elements.FiltersContainer>
-        }
+        <Tabs
+          activeTab={activeTab}
+          onChange={setActiveTab}
+        />
         <InfiniteScroll
           dataLength={projects?.length}
           next={onLoadMore}

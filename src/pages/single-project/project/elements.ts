@@ -64,18 +64,31 @@ export const InfoContainer = styled.div<any>`
     width: 100%;
     padding-left: 0;
   }
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    text-align: center;
-  }
 `
 
 export const Title = styled.h2<any>`
+  margin: 15px 0 10px;
   font-size: 24px;
   color: ${({ theme }) => theme.text};
   font-weight: 600;
 `
 
-export const Description = styled.h2<any>`
+export const SubTitle = styled.h3<any>`
+  margin: 0 0 15px;
+  font-size: 21px;
+  color: ${({ theme }) => theme.text};
+  font-weight: 500;
+`
+
+export const Description = styled.p<any>`
+  margin: 0 0 20px;
+  font-size: 18px;
+  color: ${({ theme }) => theme.textLight};
+  font-weight: 400;
+`
+
+export const Info = styled.p<any>`
+  margin: 0 0 10px;
   font-size: 18px;
   color: ${({ theme }) => theme.textLight};
   font-weight: 400;

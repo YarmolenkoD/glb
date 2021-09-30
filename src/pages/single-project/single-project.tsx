@@ -1,4 +1,5 @@
-import { useParams } from "react-router-dom"
+import { useEffect } from 'react'
+import { useParams, useHistory } from 'react-router-dom'
 
 // common components
 import { Hero } from 'components'
@@ -7,19 +8,26 @@ import { Hero } from 'components'
 import Project from './project/project'
 
 // hooks
-import { useProject } from '../../hooks'
+import { useProject } from 'hooks'
 
-export function SingleProject () {
+export function SingleProject() {
   const { id } = useParams()
+  const history = useHistory()
   const project = useProject(id)
+
+  useEffect(() => {
+    if (!project) {
+      history.replace('/not-found')
+    }
+  }, [project])
 
   return (
     <>
       <Hero
-        title={project.title}
+        title={project?.title}
         description={null}
       />
-      <Project data={project} />
+      {project && <Project data={project} />}
     </>
   )
 }

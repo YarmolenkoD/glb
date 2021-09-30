@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import _ from 'lodash'
 
 // hooks
-import { useTranslation, IFilterParams } from 'hooks'
+import { IFilterParams } from 'hooks'
 
 // images
 import images from 'assets/images/data/projects'
@@ -50,9 +50,8 @@ const formatProjects = (projects, filters: IFilterParams = []) => {
   }))
 }
 
-export const useProjects = ({ initialPage = 1, count = 10, filters }: IParams) => {
-  const translation = useTranslation()
-  const data = useMemo(() => formatProjects(jsonData[translation], filters), [translation])
+export const useProjects = ({ initialPage = 1, count = 100, filters }: IParams) => {
+  const data = useMemo(() => formatProjects(jsonData.projects, filters), [filters])
 
   const [currentPage, setCurrentPage] = useState<number>(initialPage)
   const [projects, setProjects] = useState<IProject[]>([])
@@ -64,8 +63,9 @@ export const useProjects = ({ initialPage = 1, count = 10, filters }: IParams) =
   }, [projects.length])
 
   useEffect(() => {
+    setCurrentPage(initialPage)
     setProjects(data.slice((initialPage - 1) * count, count))
-  }, [])
+  }, [data])
 
   const loadMore = useCallback(({ page }) => {
     setLoading(true)
@@ -84,9 +84,7 @@ export const useProjects = ({ initialPage = 1, count = 10, filters }: IParams) =
 }
 
 export const useProject = (id) => {
-  const translation = useTranslation()
-
-  return jsonData[translation]?.find(project => project.id === id) ?? null
+  return jsonData.projects?.find(project => project.id === id) || null
 }
 
 export const useCoverImage = (project) => {

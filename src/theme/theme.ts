@@ -90,6 +90,10 @@ const light: ITheme = {
    * Main media breakpoints.
    */
   breakpoints: breakpoints,
+  /**
+   * Primary placeholder color.
+   */
+  placeholder: palette.grayLighter,
 }
 
 const dark: ITheme = {
@@ -168,6 +172,10 @@ const dark: ITheme = {
    * Main media breakpoints.
    */
   breakpoints: breakpoints,
+  /**
+   * Primary placeholder color.
+   */
+  placeholder: palette.grayLighter,
 }
 
 export const theme = {

@@ -13,7 +13,7 @@ export const Item = styled.div<any>`
   padding: 6px 10px;
   cursor: pointer;
   border-radius: 4px;
-  background-color: #a09c9c;
+  background-color: ${({ theme }) => theme.palette.secondaryGrayLight};
   color: ${({ theme }) => theme.textLighter};
   transition: all 0.2s ease;
   &:first-child {
