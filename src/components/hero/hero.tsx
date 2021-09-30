@@ -12,7 +12,7 @@ const SLIDER_SETTINGS = {
   autoplay: true,
   fade: true,
   speed: 750,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 12000,
   slidesToShow: 1,
   slidesToScroll: 1,
   customPaging: () => <div className="slick-custom-dot" />,
@@ -39,7 +39,7 @@ export const Hero = (props: IProps) => {
     <Elements.SliderContainer fullScreen={fullScreen}>
       <Slider {...SLIDER_SETTINGS}>
         <Elements.SliderItem fullScreen={fullScreen} item={1} />
-        <Elements.SliderItem fullScreen={fullScreen} item={2} />
+        {/*<Elements.SliderItem fullScreen={fullScreen} item={2} />*/}
         <Elements.SliderItem fullScreen={fullScreen} item={3} />
       </Slider>
     </Elements.SliderContainer>

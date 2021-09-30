@@ -51,6 +51,10 @@ export const SliderContainer = styled.div<any>`
     & .slick-active .slick-custom-dot {
       background: ${({ theme }) => theme.primary};
     }
+    
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+      display: none !important;
+    }
   }
 `
 
