@@ -66,6 +66,12 @@ export const Logo = styled.img<any>`
   max-width: 500px;
   margin-right: 35px;
   cursor: pointer;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallLaptop}px) {
+    max-width: 385px;
+    margin: 0 20px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 50px;
     margin: 0 20px;
