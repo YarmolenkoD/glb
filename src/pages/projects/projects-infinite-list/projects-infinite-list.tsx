@@ -42,7 +42,7 @@ export function ProjectsInfiniteList() {
   useEffect(() => {
     const tab = params.get('tab') || activeTab
     setActiveTab(tab)
-  }, [params, activeTab])
+  }, [])
 
   useEffect(() => {
     history.push({ search: `?tab=${activeTab}` })
