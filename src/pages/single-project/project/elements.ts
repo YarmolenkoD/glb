@@ -49,6 +49,28 @@ export const SliderContainer = styled.div<any>`
   & .slick-active .slick-custom-dot {
     background: ${({ theme }) => theme.primary};
   }
+  
+  & .slick-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    
+    &:before {
+      font-size: 30px;
+    }
+    
+    &.slick-prev {
+      left: 0;
+    }
+    
+    &.slick-next {
+      right: 0;
+    }
+  }
 `
 
 export const SliderItem = styled.div<any>`
