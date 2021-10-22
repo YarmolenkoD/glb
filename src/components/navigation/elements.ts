@@ -57,23 +57,42 @@ export const Link = styled(NavLink)<any>`
   }
 `
 
-export const LogoContainer = styled.div<any>`
+export const FlexContainer = styled.div<any>`
   display: flex;
   align-items: center;
 `
 
-export const Logo = styled.img<any>`
-  max-width: 500px;
+export const LogoContainer = styled(FlexContainer)`
   margin-right: 35px;
   cursor: pointer;
+  
+  &:hover img {
+    transform: rotate(360deg) scale(1.1);
+  }
+`
+
+export const Logo = styled.img<any>`
+  width: 50px;
+  margin: 0 5px;
+  transition: all 1s ease;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallLaptop}px) {
-    max-width: 385px;
-    margin: 0 20px;
+    width: 40px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 50px;
-    margin: 0 20px;
+  }
+`
+
+export const LogoText  = styled.p<any>`
+  font-size: 40px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.text};
+  margin: 0;
+  letter-spacing: -1px;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallLaptop}px) {
+    font-size: 30px;
   }
 `

@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react'
+import { useCallback } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -15,7 +15,7 @@ import BurgerMenu from './burger-menu/burger-menu'
 import { useBreakpoint } from 'hooks'
 
 // images
-import { textLogo, logo } from 'assets/images'
+import { logo } from 'assets/images'
 
 // data
 import { NAVIGATION_ITEMS, IRenderItemProps, IExtraProps } from './data'
@@ -52,15 +52,19 @@ export function Navigation() {
     </Elements.Item>
   }
 
-  const logoIcon = useMemo(() => breakpoint > breakpoints.phone ? textLogo : logo, [breakpoint])
+  // const logoIcon = useMemo(() => breakpoint > breakpoints.phone ? textLogo : logo, [breakpoint])
 
   return <Elements.Wrapper>
     <Container>
       <Elements.InnerContainer>
-        <Elements.LogoContainer>
-          <Elements.Logo onClick={onLogoClick} src={logoIcon} alt="Global construction" />
+        <Elements.FlexContainer>
+          <Elements.LogoContainer onClick={onLogoClick}>
+            <Elements.LogoText>GL</Elements.LogoText>
+            <Elements.Logo src={logo} alt="Global construction" />
+            <Elements.LogoText>BAL CONSTRUCTION</Elements.LogoText>
+          </Elements.LogoContainer>
           <SwitchLanguage />
-        </Elements.LogoContainer>
+        </Elements.FlexContainer>
         {
           breakpoint > breakpoints.phone ?
             <Elements.Nav>
