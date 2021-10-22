@@ -69,6 +69,10 @@ export const LogoContainer = styled(FlexContainer)`
   &:hover img {
     transform: rotate(360deg) scale(1.1);
   }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    margin-right: 18px;
+  }
 `
 
 export const Logo = styled.img<any>`
@@ -82,6 +86,7 @@ export const Logo = styled.img<any>`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 50px;
+    margin: 0;
   }
 `
 
@@ -94,5 +99,9 @@ export const LogoText  = styled.p<any>`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.smallLaptop}px) {
     font-size: 30px;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    display: none;
   }
 `
