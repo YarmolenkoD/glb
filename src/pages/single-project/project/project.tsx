@@ -58,6 +58,7 @@ export default function Project (props: IProps) {
       {!!project?.title && <Elements.Title>{project.title}</Elements.Title>}
       {!!project?.subTitle && <Elements.SubTitle>{t(project.subTitle)}</Elements.SubTitle>}
       {!!project?.description && <Elements.Description>{project.description}</Elements.Description>}
+      {!!project?.country && <Elements.Info>{t('Country')}: {t(project.country)}</Elements.Info>}
       {!!project?.type?.length && <Elements.Info>{t('Type of work')}: {project.type.map((el) => t(el)).join(', ')}</Elements.Info>}
       {!!project?.amount && <Elements.Info>{t('Amount')}: {t(project.amount)}</Elements.Info>}
       {!!project?.duration && <Elements.Info>{t('Duration')}: {project.duration} {t('Months')}</Elements.Info>}

@@ -10,11 +10,11 @@ export const OUR_PRINCIPLES = {
     },
     {
       title: 'Innovation',
-      description: 'Innovation is a concept identified with the organizational thinking and behavior of the Global Construction. The philosophy of the GLB work can be briefly expressed by the slogan «to achieve high quality, always use the latest technology and look for new solutions». This innovative thinking, going outside, especially in the production of original projects, also puts its stamp on all activities within the GLB, enhancing the harmonious interaction between the units and ensures positive synergy.'
+      description: 'Innovation is a concept identified with the organizational thinking and behavior of the Global Construction. The philosophy of the Global Construction work can be briefly expressed by the slogan «to achieve high quality, always use the latest technology and look for new solutions». This innovative thinking, going outside, especially in the production of original projects, also puts its stamp on all activities within the GLB, enhancing the harmonious interaction between the units and ensures positive synergy.'
     },
     {
       title: 'Sustainability',
-      description: 'The established GLB has a strong, healthy and ongoing relationship with customers, created in accordance with the goals of creating long-term value, in terms of sustainability shows a stable commitment. Important steps taken towards the sustainability of the customer relationship are the technical staff closely monitoring all developments in the electricity sector, a project team that aims to provide technical benefits in creating the project, which will provide the opportunity to live tomorrow from today, together with an after-sales support unit that is responsible for company start-up and training services.'
+      description: 'The established Global Construction has a strong, healthy and ongoing relationship with customers, created in accordance with the goals of creating long-term value, in terms of sustainability shows a stable commitment. Important steps taken towards the sustainability of the customer relationship are the technical staff closely monitoring all developments in the electricity sector, a project team that aims to provide technical benefits in creating the project, which will provide the opportunity to live tomorrow from today, together with an after-sales support unit that is responsible for company start-up and training services.'
     },
   ],
   ua: [
@@ -28,11 +28,11 @@ export const OUR_PRINCIPLES = {
     },
     {
       title: 'Новаторство',
-      description: 'Новаторство, це поняття ототожнити з організаційним мисленням і поведінкою Global Construction. Філософію роботи GLB construction можна коротко висловити гаслом «для досягнення високої якості завжди користуватися новейшейтехнологіей і шукати нові рішення». Це інноваційне мислення, виходячи назовні особливо при виробництві оригінальних проектів, ставить свою печатку і на всі види діяльності всередині GLB construction, посилюючи гармонійну взаємодію між одиницями забезпечує позитивної синергией.'
+      description: 'Новаторство, це поняття ототожнити з організаційним мисленням і поведінкою Global Construction. Філософію роботи Global Construction можна коротко висловити гаслом «для досягнення високої якості завжди користуватися новейшейтехнологіей і шукати нові рішення». Це інноваційне мислення, виходячи назовні особливо при виробництві оригінальних проектів, ставить свою печатку і на всі види діяльності всередині GLB construction, посилюючи гармонійну взаємодію між одиницями забезпечує позитивної синергией.'
     },
     {
       title: 'Стійкість',
-      description: 'Створені GLB construction міцні, здорові і постійні відносини з клієнтами, створені відповідно до цілей створення довгострокової цінності, щодо стійкості виявляє стабільну прихильність. Важливими кроками, зробленими в напрямку питання стійкості відносин з клієнтом, є технічний персонал уважно стежить за всім розвитком в секторі електрики, проектна група, яка націлена на надання технічних переваг при створенні проекту, що надасть можливість проживання завтрашнього дня вже з сьогоднішнього дня, разом з одиницею пост-продажної підтримки, яка несе відповідальність за послуги з відкриття (запуску) компанії і навчання.'
+      description: 'Створені Global Construction міцні, здорові і постійні відносини з клієнтами, створені відповідно до цілей створення довгострокової цінності, щодо стійкості виявляє стабільну прихильність. Важливими кроками, зробленими в напрямку питання стійкості відносин з клієнтом, є технічний персонал уважно стежить за всім розвитком в секторі електрики, проектна група, яка націлена на надання технічних переваг при створенні проекту, що надасть можливість проживання завтрашнього дня вже з сьогоднішнього дня, разом з одиницею пост-продажної підтримки, яка несе відповідальність за послуги з відкриття (запуску) компанії і навчання.'
     },
   ]
 }

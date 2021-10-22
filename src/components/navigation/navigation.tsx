@@ -58,7 +58,7 @@ export function Navigation() {
     <Container>
       <Elements.InnerContainer>
         <Elements.LogoContainer>
-          <Elements.Logo onClick={onLogoClick} src={logoIcon} alt="GlB construction" />
+          <Elements.Logo onClick={onLogoClick} src={logoIcon} alt="Global construction" />
           <SwitchLanguage />
         </Elements.LogoContainer>
         {
